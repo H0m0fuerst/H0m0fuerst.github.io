@@ -136,14 +136,15 @@
     }
 
     // reset ball if it goes past paddle (but only if we haven't already done so)
+    //Scoring: If ball goes out to right, left scored and vice versa
     if ( (ball.x < 0 || ball.x > canvas.width) && !ball.resetting) {
       if(ball.x < 0 && !ball.resetting) {
-        scoreLeft++;
-        console.log("Left")
+        scoreRight++;
+        console.log("Right scored")
       }
       else if(ball.x > canvas.width && !ball.resetting) {
-        scoreRight++;
-        console.log("Right")
+        scoreLeft++;
+        console.log("Left scored")
       }
 
       document.getElementById("counter").innerHTML = scoreLeft + ":" + scoreRight;
